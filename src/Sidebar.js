@@ -23,10 +23,10 @@ export default function Sidebar() {
         <div className='sidebar'>
             <div className='sidebar__header'>
                 <div className='sidebar__info'>
-                    <h2>Inevitable Programmer</h2>
+                    <h2>{user.displayName}</h2>
                     <h3>
                         <FiberManualRecord/>
-                        {user.displayName}
+                        {user.email}
                     </h3>
                 </div>
                 <Create/>
