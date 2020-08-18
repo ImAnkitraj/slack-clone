@@ -3,10 +3,12 @@ import './Sidebar.css'
 import { FiberManualRecord, Create, InsertComment, Inbox, BookmarkBorder, Drafts, Apps, FileCopy, ExpandLess, PeopleAlt, ExpandMore, Add } from '@material-ui/icons'
 import SidebarOption from './SidebarOption'
 import db from './firebase';
+import { useStateValue } from './StateProvider';
 
 export default function Sidebar() {
 
     const [channels, setChannels] = useState([]);
+    const [{user}]= useStateValue();
 
     useEffect(() => {
         //run this code once when sidebar component loads
@@ -24,7 +26,7 @@ export default function Sidebar() {
                     <h2>Inevitable Programmer</h2>
                     <h3>
                         <FiberManualRecord/>
-                        Ankit Raj
+                        {user.displayName}
                     </h3>
                 </div>
                 <Create/>
